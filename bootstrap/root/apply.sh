@@ -1,9 +1,11 @@
 #!/bin/sh
 
-VALUES="values.yaml"
+VALUES="values-seed.yaml"
 
-curl -fks --connect-timeout 5 https://git.khuedoan.com \
+curl -fks --connect-timeout 5 https://git.deployql.net \
     || VALUES="values-seed.yaml"
+
+echo $VALUES
 
 helm template \
     --include-crds \
