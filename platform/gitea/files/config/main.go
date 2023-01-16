@@ -3,6 +3,7 @@ package main
 // TODO WIP clean this up
 
 import (
+	"fmt"
 	"log"
 	"os"
 
@@ -53,7 +54,8 @@ func main() {
 	client, err := gitea.NewClient(gitea_host, options)
 
 	if err != nil {
-		log.Fatal(err)
+		fmt.Sprintf(err.Error())
+		return
 	}
 
 	for _, org := range config.Organizations {
